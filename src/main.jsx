@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./routes/App.jsx";
+import App from "./App.jsx";
 import About from "./routes/About.jsx";
 import ContactDetails from "./routes/ContactDetails.jsx";
 import News from "./routes/News.jsx";

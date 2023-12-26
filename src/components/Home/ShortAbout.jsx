@@ -1,6 +1,7 @@
-import { about } from "../assets/data/about";
+import { about } from "../../assets/data/about";
 import { Link } from "react-router-dom";
-import aboutImg from "../assets/images/about.jpg";
+import aboutImg from "../../assets/images/about.jpg";
+
 const ShortAbout = () => {
   return (
     <div className="short-about-container">

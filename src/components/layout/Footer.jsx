@@ -1,4 +1,4 @@
-import { footer } from "../assets/data/footer";
+import { footer } from "../../assets/data/footer";
 
 const Footer = () => {
   return (

@@ -1,7 +1,7 @@
-import Slider from "../components/Slider";
-import ShortAbout from "../components/ShortAbout";
-import Services from "../components/Services";
-import ContactLocation from "../components/ContactLocation";
+import Slider from "../components/Home/Slider";
+import ShortAbout from "../components/Home/ShortAbout";
+import Services from "../components/Home/Services";
+import ContactLocation from "../components/Home/ContactLocation";
 
 function Home() {
   return (

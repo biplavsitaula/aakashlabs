@@ -16,7 +16,10 @@ const About = () => {
           <p>{aboutUs.values}</p>
         </div>
       </div>
-      <div className="team"></div>
+      <div className="team">
+        
+
+      </div>
       <div className="gallery"></div>
     </div>
   );

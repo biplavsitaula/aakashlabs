@@ -1,4 +1,4 @@
-import { contact } from "../assets/data/contact";
+import { contact } from "../../assets/data/contact";
 
 const ContactLocation = () => {
   return (

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { services } from "../assets/data/services";
+import { services } from "../../assets/data/services";
 
 const Services = () => {
   return (
