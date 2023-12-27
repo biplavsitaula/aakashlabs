@@ -1,5 +1,7 @@
+import Avatar from "react-avatar";
 import { aboutUs } from "../assets/data/aboutUs";
 import aboutImg from "../assets/images/about.jpg";
+
 const About = () => {
   return (
     <div>
@@ -17,10 +19,19 @@ const About = () => {
         </div>
       </div>
       <div className="team">
-        
-
+        <h2>The Team</h2>
+        <div className="team-list">
+          {aboutUs.team.map((data, index) => (
+            <div key={index}>
+              <div className="avatar">
+                <Avatar name={data.name} />
+              </div>
+              <div className="team-name">{data.name}</div>
+              <div className="team-position">{data.position}</div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="gallery"></div>
     </div>
   );
 };
