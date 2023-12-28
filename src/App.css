@@ -343,3 +343,41 @@
   padding: 5px;
   font-size: medium;
 }
+
+.news {
+  width: 99%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5px;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1px;
+}
+
+.news-list {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  border: 1px solid #112d58;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #112d58;
+}
+
+.news-list>p>img {
+  width: 100%;
+  height: auto;
+}
+
+.news-list>p,
+h3 {
+  padding: 10px;
+}
