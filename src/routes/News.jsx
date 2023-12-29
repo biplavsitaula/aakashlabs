@@ -1,45 +1,38 @@
-import { useEffect, useState } from "react";
-import { apiKey, url } from "../assets/data/apiData";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { NewsContext } from "../components/store";
 
 const NewsList = () => {
-  const [newsData, setNewsData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 5;
-  const itemsPerPage = 2;
+  const {
+    currentElements,
+    handlePrevious,
+    handleNext,
+    totalPages,
+    currentPage,
+  } = useContext(NewsContext);
+  const navigate = useNavigate();
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentElements = newsData.slice(indexOfFirstItem, indexOfLastItem);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      const response = await fetch(url + apiKey);
-      const result = await response.json();
-      setNewsData(result.articles);
-    };
-
-    fetchNews();
-  }, [currentPage]);
-
-  const handlePrevious = (newPage) => {
-    setCurrentPage(newPage);
-  };
-  const handleNext = (newPage) => {
-    setCurrentPage(newPage);
+  const handleClick = () => {
+    navigate("/full-news");
   };
 
   return (
     <div className="news">
+      <h1
+        style={{ color: "#112d58", display: "flex", justifyContent: "center" }}
+      >
+        News
+      </h1>
       <ul>
         {currentElements.map((element, index) => (
-          <li key={index} className="news-list">
+          <li onClick={handleClick} key={index} className="news-list">
             <img src={element.image} alt="" />
             <h4 className="">{element.title}</h4>
             <p>{element.description}</p>
           </li>
         ))}
       </ul>
-      <div>
+      <div className="news-control">
         <button
           onClick={() => {
             handlePrevious(currentPage - 1);
@@ -49,7 +42,7 @@ const NewsList = () => {
           Previous Page
         </button>
         <span>
-          {currentPage}of{totalPages}
+          {currentPage} of {totalPages}
         </span>
         <button
           onClick={() => {

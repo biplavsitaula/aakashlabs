@@ -6,6 +6,8 @@ import ContactDetails from "./routes/ContactDetails.jsx";
 import News from "./routes/News.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./routes/Home.jsx";
+import NewsDetail from "./routes/NewsDetail.jsx";
+import NewsProvider from "./components/store/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +28,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/news",
-        element: <News />,
+        element: (
+          <NewsProvider>
+            <News />
+          </NewsProvider>
+        ),
+      },
+      {
+        path: "/full-news",
+        element: (
+          <NewsProvider>
+            <NewsDetail component={News} />
+          </NewsProvider>
+        ),
       },
     ],
   },
